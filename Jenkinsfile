@@ -6,14 +6,14 @@ pipeline {
     stages { 
         stage('SCM Checkout') {
             steps{
-            git 'https://github.com/cs1867/archiver.git'
+            git 'https://github.com/cs1867/jenkinstest.git'
             }
         }
 
         stage('Build docker image') {
             steps {  
                 sh 'pwd'
-                sh 'docker build -t cs1867/archiver:latest .'
+                sh 'docker build -t cs1867/jenkinstest:latest .'
             }
         }
         stage('login to dockerhub') {
@@ -23,7 +23,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push cs1867/archiver:latest'
+                sh 'docker push cs1867/jenkinstest:latest'
             }
         }
 }
