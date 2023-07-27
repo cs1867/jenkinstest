@@ -1,4 +1,4 @@
-FROM centos7
+FROM centos:centos7
  
 
 CMD ["echo", "Welcome to Jenkkns docker fun"]
